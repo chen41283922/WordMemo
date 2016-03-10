@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_add_word" tools:context=".AddWord"
+    android:background="@drawable/background">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtWord"
+        android:width="150dp"
+        android:hint="請輸入單字"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/txtWord" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtDef"
+        android:width="150dp"
+        android:hint="請輸入解釋"
+        android:gravity="center"
+        android:layout_below="@+id/edtWord"
+        android:layout_toEndOf="@+id/txtWord" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnType"
+        android:layout_below="@+id/edtDef"
+        android:layout_alignStart="@+id/edtDef" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spnType"
+        android:id="@+id/tableRow">
+
+        <Button
+
+            android:layout_height="40dp"
+            android:text="新增"
+            android:id="@+id/btnAdd"
+            android:layout_below="@+id/spnType"
+            android:layout_alignParentStart="true"
+
+            android:layout_width="70dp" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="修改"
+            android:id="@+id/btnChange"
+            android:layout_alignBottom="@+id/btnAdd"
+            android:layout_toEndOf="@+id/btnAdd" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="刪除"
+            android:id="@+id/btnDel"
+            android:layout_alignBottom="@+id/btnChange"
+            android:layout_toEndOf="@+id/btnChange" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="清除"
+            android:id="@+id/btnClear"
+            android:layout_below="@+id/spnType"
+            android:layout_toEndOf="@+id/btnDel" />
+    </TableRow>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="180dp"
+        android:id="@+id/listWord"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tableRow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="單字："
+        android:id="@+id/txtWord"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/edtWord"
+        android:textSize="22dp"
+        android:textColor="#1033a8" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="解釋："
+        android:id="@+id/txtDef"
+        android:layout_below="@+id/edtWord"
+        android:layout_alignParentStart="true"
+        android:textColor="#1033a8"
+        android:textSize="22dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="詞性："
+        android:id="@+id/txtType"
+        android:textColor="#1033a8"
+        android:textSize="22dp"
+        android:layout_below="@+id/edtDef"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
